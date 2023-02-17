@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<style>
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+thead{background-color: gray;}
+
+</style>
+
+<div class="text-center" xmlns="http://www.w3.org/1999/html">
+
+    <p>
+        <br>
+        Welcome <u><strong>Crawlers</strong></u>
+    </p>
+        This web application has been developed to scrap courses data from <strong style="color:dodgerblue">iNeuron</strong> website.
+
+
+    <div class="text-left">
+
+            <table class="table table-hover table-light">
+                <thead>
+                <tr style="color:white">
+                    <th scope="col">#</th>
+                    <th scope="col">Features</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr><td>1.</td><td>Data is being stored in MySQL database while crawling.</td></tr>
+                <tr><td>2.</td><td>Data is being stored in MongoDB database while crawling.</td></tr>
+                <tr><td>3.</td><td>Course Detail Data is being stored in PDF file on Amazon S3 server.</td></tr>
+                <tr><td>4.</td><td>Web App is being hosted on BeanStack Server.</td></tr>
+                <tr><td>5.</td><td>Web App is being hosted on AWS Server.</td></tr>
+                <tr><td>6.</td><td>Web App is being hosted on Azure Server.</td></tr>
+                </tbody>
+            </table>
+
+    </div>
+    <br><br><br><br>
+
+    When ready data can be scrapped by clicking on the button below.
+
+    <br><br>
+     <div class="text-center">
+        <form class="dark" action={{url_for("home_page")}} method="POST">
+            <button type="submit"  style="background-color:orange"><strong>Lets Crawl</strong></button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

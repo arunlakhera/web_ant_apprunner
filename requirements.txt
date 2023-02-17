@@ -1,0 +1,6 @@
+bs4
+flask[async]
+fpdf
+boto3
+pymongo
+PyMySQL
