@@ -3,6 +3,4 @@ flask[async]
 fpdf
 boto3
 pymongo
-PyMySQL
-pipenv
-install
+PyMySQLhttps://github.com/arunlakhera/web_ant_apprunner/blob/main/requirements.txt
