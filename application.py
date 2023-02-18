@@ -4,8 +4,8 @@ from helper.NeuronScrapper import NeuronScrapper
 import utilities
 import logging
 
-application = Flask(__name__)
-app = application
+app = Flask(__name__)
+
 
 # Set Log Level
 logging.basicConfig(filename='ineuron_log.log',
