@@ -3,10 +3,6 @@ from flask import Flask, render_template, request
 from helper.NeuronScrapper import NeuronScrapper
 import utilities
 import logging
-from wsgiref.simple_server import make_server
-from pyramid.config import Configurator
-from pyramid.response import Response
-import os
 
 application = Flask(__name__)
 app = application
@@ -31,7 +27,6 @@ async def home_page():
     When "Lets Crawl" Button is pressed on home page , it redirects
     the user to the loading.html
     """
-    name = os.environ.get('NAME')
 
     if request.method == 'POST':
         return render_template("loading.html")
@@ -146,29 +141,5 @@ def course_detail():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT"))
-    with Configurator() as config:
-
-        config.add_route('/')
-        config.add_route('/home_page')
-        config.add_view(home_page)
-
-        config.add_route('/loading')
-        config.add_view(loading)
-
-        config.add_route('/cat_subcat_list')
-        config.add_view(cat_subcat_list)
-
-        config.add_route('/course_list')
-        config.add_view(course_list)
-
-        config.add_route('/course_detail')
-        config.add_view(course_detail)
-
-        app = config.make_wsgi_app()
-
-    server = make_server('0.0.0.0', port, app)
-    server.serve_forever()
-
-    # app.run(host='0.0.0.0', debug=True)
+    app.run()
 
