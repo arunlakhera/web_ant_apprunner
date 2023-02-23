@@ -1,4 +1,4 @@
-# web_ant_apprunner
+n# web_ant_apprunner
 
 The Web Ant Crawler is developed to scrape through courses offered in the iNeuron website.
 
@@ -8,7 +8,7 @@ The Web Ant Crawler is developed to scrape through courses offered in the iNeuro
 4. User can then save the course detail in Amazon S3 storage.
 5. All the course related data scraped is stored in mongo DB.
 6. We also store the course related details in MySQL using this application.
-7. This application is deployed in the Beanstalk , Azure & AWS. [This is AWS EC2 deployed code]
+7. This application is deployed in the Beanstalk , Azure & AWS. [This is AWS AppRunner deployed code]
 8. The application uses logging to log all the information.
 9. All the required packages have been provided in the requirements.txt file.
 10. Data is scraped only for learning purpose and is deleted and app removed from deployed server.
