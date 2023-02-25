@@ -11,12 +11,19 @@ def save_to_s3(filename):
     """
     # Create an S3 access object
     s3 = boto3.client("s3")
+    BUCKET_NAME = "arunpdf"
+    
     try:
-        s3.upload_file(
-            Filename=filename,
-            Bucket="arunpdf",
-            Key=filename,
-        )
+        file_name = "./" + filename
+        with open(file_name, 'rb') as f:
+            s3.upload_fileobj(
+                f, BUCKET_NAME, filename
+            )
+#         s3.upload_file(
+#             Filename=filename,
+#             Bucket="arunpdf",
+#             Key=filename,
+#         )
     except Exception as e:
         logging.error(e)
 
